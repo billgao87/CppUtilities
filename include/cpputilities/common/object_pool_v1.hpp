@@ -3,7 +3,7 @@
 #include <queue>
 #include <cassert>
 
-namespace cpputilities
+namespace cpp_utilities
 {
 	namespace common
 	{
@@ -145,7 +145,7 @@ namespace cpputilities
 			}
 		}	//!namespace object_pool
 	}	//!namespace common
-}	//!namespace cpputilities
+}	//!namespace cpp_utilities
 
 
 #endif	//CPP_UTILITIES_COMMON_OBEJCT_POOL_V1_H_

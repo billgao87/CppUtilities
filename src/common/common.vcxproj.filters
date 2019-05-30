@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v2.hpp">
       <Filter>object_pool</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\common\object_pool_v3.hpp">
+      <Filter>object_pool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
