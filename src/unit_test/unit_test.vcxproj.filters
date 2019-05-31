@@ -32,13 +32,16 @@
     <ClCompile Include="unit_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="utilities_object_pool_test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="concurrent_object_pool_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="concurrent_memory_pool_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="common_any_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="common_object_pool_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

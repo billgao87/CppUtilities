@@ -162,6 +162,7 @@ echo D | xcopy "$(TargetDir)$(TargetName).lib" "$(SolutionDir)lib\$(Platform)\" 
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\cpputilities\common\Any.h" />
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v1.hpp" />
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v2.hpp" />
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v3.hpp" />

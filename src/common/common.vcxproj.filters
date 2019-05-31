@@ -13,7 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="object_pool">
+    <Filter Include="common">
+      <UniqueIdentifier>{f6864651-30f7-4b84-8bb8-d1ca4d278ef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\object_pool">
       <UniqueIdentifier>{0bd1d9d3-3892-48fe-9272-015617c166c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -31,16 +34,19 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v1.hpp">
-      <Filter>object_pool</Filter>
+      <Filter>common\object_pool</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v2.hpp">
-      <Filter>object_pool</Filter>
+      <Filter>common\object_pool</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v3.hpp">
-      <Filter>object_pool</Filter>
+      <Filter>common\object_pool</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cpputilities\common\object_pool.hpp">
-      <Filter>object_pool</Filter>
+      <Filter>common\object_pool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\common\Any.h">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
