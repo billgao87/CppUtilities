@@ -9,7 +9,6 @@ namespace cpp_utilities
 	{
 		namespace object_pool
 		{
-
 			template<typename Object>
 			class ObjectPool
 			{
