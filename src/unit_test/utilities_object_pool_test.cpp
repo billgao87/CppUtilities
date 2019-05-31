@@ -5,6 +5,7 @@
 #include "cpputilities/common/object_pool_v3.hpp"
 
 #include <memory>
+#include "cpputilities/common/object_pool.hpp"
 
 using namespace cpp_utilities::common::object_pool;
 
@@ -29,7 +30,7 @@ public:
 };
 
 
-TEST(object_pool_test, DISABLED_object_pool_v1_test)
+TEST(utilities_object_pool_test, DISABLED_object_pool_v1_test)
 {
 	ObjectPoolV1<TestA> TestPool(2);
 
@@ -52,7 +53,7 @@ TEST(object_pool_test, DISABLED_object_pool_v1_test)
 	TestPool.Delete(pTest2);
 }
 
-TEST(object_pool_test, DISABLED_object_pool_v2_test)
+TEST(utilities_object_pool_test, DISABLED_object_pool_v2_test)
 {
 	ObjectPoolV2<TestA> p;
 	p.add(std::make_unique<TestA>());
@@ -75,14 +76,21 @@ struct BigObject
 	BigObject() {}
 	BigObject(int a) {}
 
-	BigObject(const int& a, const int&b) {}
+	BigObject(const int& a, const int&b)
+	{
+		A = a;
+		B = b;
+	}
 	void Print(const std::string& str)
 	{
-		std::cout << str << std::endl;
+		std::cout << str << ": A = " << A << "; B = " << B << std::endl;
 	}
+
+	int A = 0;
+	int B = 0;
 };
 
-void Print(std::shared_ptr<BigObject>p, const std::string& str)
+static void Print(std::shared_ptr<BigObject>p, const std::string& str)
 {
 	if (p != nullptr)
 	{
@@ -90,9 +98,9 @@ void Print(std::shared_ptr<BigObject>p, const std::string& str)
 	}
 }
 
-TEST(object_pool_test, object_pool_v3_test)
+TEST(utilities_object_pool_test, DISABLED_object_pool_v3_test)
 {
-	ObjectPool<BigObject> pool;
+	ObjectPoolV3<BigObject> pool;
 	pool.Init(2);
 	{
 		auto p = pool.Get();
@@ -114,4 +122,34 @@ TEST(object_pool_test, object_pool_v3_test)
 	pool.Init(2, 1, 2);
 	auto p5 = pool.Get<int, int>();
 	Print(p5, "p5");
+}
+
+TEST(utilities_object_pool_test, DISABLED_object_pool_v4_test)
+{ 
+	ObjectPool<BigObject> pool;
+	pool.Init(2);
+	{
+		auto p = pool.get_shared();
+		Print(p, "p");
+		auto p2 = pool.get_shared();
+		Print(p2, "p2");
+		// 出了作用哉之后，对象池返回出来的对象又会自动回收
+	}
+	printf("Pool size = %d \n", static_cast<int>(pool.size()));
+	EXPECT_TRUE(pool.size() == 2);
+
+	{
+		auto p = pool.get_shared();
+		Print(p, "p");
+		auto p2 = pool.get_shared();
+		Print(p2, "p2");
+
+		auto p3 = pool.get_shared(1, 2);
+		Print(p3, "p3");
+		printf("Pool size = %d \n", static_cast<int>(pool.size()));
+		EXPECT_TRUE(pool.size() == 9);
+	}
+	
+	printf("Pool size = %d \n", static_cast<int>(pool.size()));
+	EXPECT_TRUE(pool.size() == 12);
 }

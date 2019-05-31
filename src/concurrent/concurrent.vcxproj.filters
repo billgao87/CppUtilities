@@ -30,7 +30,10 @@
     <ClInclude Include="concurrent.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\cpputilities\concurrent\object_pool_v1.hpp">
+    <ClInclude Include="..\..\include\cpputilities\concurrent\object_pool.hpp">
+      <Filter>object_pool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\concurrent\memory_pool.hpp">
       <Filter>object_pool</Filter>
     </ClInclude>
   </ItemGroup>

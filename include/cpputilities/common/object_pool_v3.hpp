@@ -13,10 +13,10 @@ namespace cpp_utilities
 	{
 		namespace object_pool
 		{
-			//此类有问题，第一次shared_ptr引用计数为0的时候，被重新放到m_object_map中，
-			//但是如果这个shared_ptr第二次被使用而且引用计数为0的时候，由于lambda表达式里面没 m_object_map.emplace(constructName, std::shared_ptr<T>(t));
-			//没有提供自定义删除操作，因此这个时候不会被重新放回m_object_map中。
-			//经测试，会出现不能退出的问题
+			//不能使用
+			//todo:此类有问题，第一次shared_ptr引用计数为0的时候，被重新放到m_object_map中，
+			//todo:但是如果这个shared_ptr第二次被使用而且引用计数为0的时候，由于lambda表达式里面没 m_object_map.emplace(constructName, std::shared_ptr<T>(t));
+			//todo:没有提供自定义删除操作，因此这个时候不会被重新放回m_object_map中。
 			class NonCopyable
 			{
 			protected:
@@ -29,7 +29,7 @@ namespace cpp_utilities
 			};
 
 			template<typename T>
-			class ObjectPool :NonCopyable
+			class ObjectPoolV3 :NonCopyable
 			{
 				template<typename...Args>
 				using Constructor = std::function<std::shared_ptr<T>(Args...)>;
