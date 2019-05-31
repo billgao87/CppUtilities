@@ -51,6 +51,9 @@
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v4.h">
       <Filter>common\object_pool</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\common\MemoryPool.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
