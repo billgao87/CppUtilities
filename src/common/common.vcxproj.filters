@@ -45,8 +45,11 @@
     <ClInclude Include="..\..\include\cpputilities\common\object_pool.hpp">
       <Filter>common\object_pool</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\cpputilities\common\Any.h">
+    <ClInclude Include="..\..\include\cpputilities\common\Any.hpp">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\common\object_pool_v4.h">
+      <Filter>common\object_pool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
