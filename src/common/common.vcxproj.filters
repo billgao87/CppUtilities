@@ -19,6 +19,9 @@
     <Filter Include="common\object_pool">
       <UniqueIdentifier>{0bd1d9d3-3892-48fe-9272-015617c166c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="diagnose">
+      <UniqueIdentifier>{33a9c3c3-7c1b-4f82-80a3-6e0c7e259751}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -53,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="..\..\include\cpputilities\common\MemoryPool.hpp">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cpputilities\common\stop_watch.h">
+      <Filter>diagnose</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

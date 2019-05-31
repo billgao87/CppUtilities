@@ -169,6 +169,7 @@ echo D | xcopy "$(TargetDir)$(TargetName).lib" "$(SolutionDir)lib\$(Platform)\" 
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v3.hpp" />
     <ClInclude Include="..\..\include\cpputilities\common\object_pool.hpp" />
     <ClInclude Include="..\..\include\cpputilities\common\object_pool_v4.h" />
+    <ClInclude Include="..\..\include\cpputilities\common\stop_watch.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
